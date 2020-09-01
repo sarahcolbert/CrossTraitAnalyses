@@ -57,15 +57,15 @@ We used [LDSC](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Corre
 
 ### Part 2B: Aggregating results and Visualizing
 
-Once all results files are saved in the format Trait1_Trait2_rg.log and in the same directory, you can combine them into one large table using some [basic command line code]().
+Once all results files are saved in the format Trait1_Trait2_rg.log and in the same directory, you can combine them into one large table using some [basic command line code](https://github.com/sarahcolbert/CrossTraitAnalyses/blob/master/make_rg_table.md).
 
-You may also wish to have results displayed in a correlation matrix table, which can be created in R using the script [rg_fdr_matrices.R](). 
+You may also wish to have results displayed in a correlation matrix table, which can be created in R using the script [rg_fdr_matrices.R](https://github.com/sarahcolbert/CrossTraitAnalyses/blob/master/rg_fdr_matrices.R). 
 
-These matrices can also be used to make heat maps in R, which is demonstrated in [rg_heatmap.R](). 
+These matrices can also be used to make heat maps in R, which is demonstrated in [rg_heatmap.R](https://github.com/sarahcolbert/CrossTraitAnalyses/blob/master/rg_heatmap.R). 
 
 ### Part 3: Calculate genetic covariance in specific functional annotations
 
-GNOVA is not compatible with summary statistics with missing data, so we had to remove all NA values, which was done easily in R using the script [remove-NAs.R](). 
+GNOVA is not compatible with summary statistics with missing data, so we had to remove all NA values, which was done easily in R using the script [remove-NAs.R](https://github.com/sarahcolbert/CrossTraitAnalyses/blob/master/remove-NAs.R). 
 
 After removings NAs and creating new summary statistics located in /gnova_sumstats/, we were able to use [GNOVA]() to calculate annotation specific genetic covariances.
 
