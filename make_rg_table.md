@@ -1,7 +1,7 @@
 # Using the command line to create a table with all genetic correlation results
 
 
-### Step 1: pull header line from an example file and create new table file with header
+### Step 1: pull header line from an example file and create new header file
 
 ```
 grep "^p1" /rg_results/A_B_rg.log > /rg_results/header.txt
@@ -12,10 +12,10 @@ grep "^p1" /rg_results/A_B_rg.log > /rg_results/header.txt
 We do this because lines starting with the sumstats file path contain the results
 
 ```
-grep -h "^/munged_sumstats/" /rg_results/*.log >> /rg_results/rg_table1.txt
+grep -h ^/munged_sumstats/ /rg_results/*.log >> /rg_results/rg_table1.txt
 ```
 
-### Step 3: to get the just the phenotype label, remove the strings that come before and after it in the file path
+### Step 3: To get just the phenotype label, remove the strings that come before and after it in the file path
 
 ```
 sed -i 's@/munged_sumstats/@@g' /rg_results/rg_table1.txt
@@ -33,5 +33,3 @@ awk  'NR==FNR{a[$1]++;next}{ print a[$1],$0}' /rg_results/rg_table1.txt /rg_resu
 ```
 cat /rg_results/header.txt /rg_results/rg_table2.txt > rg_table.txt
 ```
-
-
